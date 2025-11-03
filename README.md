@@ -1,6 +1,6 @@
 # 🐧 Linux Learning Bot
 
-**Author:** Fahim Hossain  
+**Author:** Md. Fahim Hossain  
 **ID:** 0432320005101085  
 **Batch:** 54 
 **Section:** 5B2
