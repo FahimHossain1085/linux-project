@@ -154,13 +154,13 @@ linux-learning-bot/
 
 **Md. Fahim Hossain**  
 
-🌐 [GitHub Profile]([https://github.com/your-username](https://github.com/FahimHossain1085))
+🌐 [GitHub Profile](https://github.com/FahimHossain1085)
 
 ---
 
 ## 🪪 License
 
-This project is licensed under the **MIT License** — you’re free to use, modify, and distribute it with attribution.
+This project is licensed under the **Apache License 2.0** — you may use, modify, and distribute it under the terms of this license.
 
 ---
 
