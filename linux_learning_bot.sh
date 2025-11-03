@@ -1,0 +1,387 @@
+#!/bin/bash
+
+# ========== LINUX LEARNING BOT ==========
+# Author: Fahim Hossain
+# Description: Interactive Linux learning assistant
+# ========================================
+
+
+
+# Function to display banner
+show_banner() {
+    clear
+    echo "===================================="
+    echo "   🐧 Welcome to Linux Learning Bot  "
+    echo "===================================="
+    echo
+}
+
+# Function to greet user
+greet_user() {
+    echo -n "Enter your name: "
+    read name
+    echo "Greetings, $name!"
+   
+    echo "Press Enter to start your Linux Journey"
+    read
+    main_menu
+    
+}
+
+# ---------- FUNCTION: Teaching linux commands ----------
+teach_basic_commands() {
+    clear
+    echo "========== BASIC LINUX COMMANDS =========="
+    echo
+    echo "What is Linux Shell?"
+    echo "-------------------------------------------"
+    echo "The Linux shell is a command-line interface (CLI) that allows you to interact"
+    echo "with the operating system by typing commands. Common shells include bash, zsh,"
+    echo "and sh. It's where you run commands like 'ls', 'pwd', or write shell scripts."
+    
+    echo
+    echo "-------------------------------------------"
+    echo "Command Explanations"
+    echo "-------------------------------------------"
+    echo
+    echo "pwd (Print Working Directory)"
+    echo " > Purpose: Shows your current directory location."
+    echo " > Syntax: pwd"
+    echo " > Example: pwd → /home/user/Documents"
+    echo
+    echo "cd (Change Directory)"
+    echo " > Purpose: Moves you into another directory."
+    echo " > Syntax: cd <directory_name>"
+    echo " > Example: cd /home/user/Desktop"
+    echo
+    echo "ls (List)"
+    echo " > Purpose: Lists files and folders in the current directory."
+    echo " > Syntax: ls [options]"
+    echo " > Example: ls -l → lists details like permissions, owner, size."
+    echo
+    echo "-------------------------------------------"
+    echo "Press ENTER to start a short quiz..."
+    read
+    quiz_basic_commands
+    
+}
+# ---------- FUNCTION: Teaching File Operation ----------
+teach_file_operations() {
+    clear
+    echo "========== BASIC FILE OPERATIONS =========="
+    echo
+    echo "touch"
+    echo " > Purpose: Creates a new empty file or updates a file’s timestamp."
+    echo " > Syntax: touch <filename>"
+    echo " > Example: touch notes.txt"
+    echo
+    echo "mkdir (Make Directory)"
+    echo " > Purpose: Creates a new directory."
+    echo " > Syntax: mkdir <directory_name>"
+    echo " > Example: mkdir projects"
+    echo
+    echo "cp (Copy)"
+    echo " > Purpose: Copies files or directories."
+    echo " > Syntax: cp <source> <destination>"
+    echo " > Example: cp file.txt backup.txt"
+    echo
+    echo "mv (Move / Rename)"
+    echo " > Purpose: Moves or renames files or directories."
+    echo " > Syntax: mv <source> <destination>"
+    echo " > Example: mv old.txt new.txt"
+    echo
+    echo "rm (Remove)"
+    echo " > Purpose: Deletes files or directories."
+    echo " > Syntax: rm <filename>"
+    echo " > Example: rm old.txt"
+    echo " Be careful! Deleted files usually cannot be recovered."
+    echo
+    echo "-------------------------------------------"
+    echo "Press ENTER to start a short quiz..."
+    read
+    quiz_file_operations
+   
+}
+
+quiz_file_operations() {
+    clear
+    echo "========== FILE OPERATIONS QUIZ =========="
+    echo
+    score=0
+
+    # Question 1
+    echo "1. How do you create a file called 'myfile'?"
+    
+    echo -n "Your answer: "
+    read ans
+    if [[ "$ans" == "touch myfile" ]]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Wrong! The correct answer is: touch myfile"
+    fi
+    echo
+
+    # Question 2
+    echo "Which command creates a new directory named 'docs'?"
+   
+    echo -n "Your answer: "
+    read ans
+    if [[ "$ans" == "mkdir docs" ]]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Wrong! The correct answer is: mkdir docs"
+    fi
+    echo
+
+    # Question 3
+    echo "How do you copy a file named 'report.txt' to 'backup.txt'?"
+  
+    echo -n "Your answer: "
+    read ans
+    if [[ "$ans" == "cp report.txt backup.txt" ]]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Wrong! The correct answer is: cp report.txt backup.txt"
+    fi
+    echo
+
+    # Question 4
+    echo "Using the \"mv\" command, how would you rename a file named \"cat\" to \"dog\"?"
+   
+    echo -n "Your answer: "
+    read ans
+    if [[ "$ans" == "mv cat dog" ]]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Wrong! The correct answer is: mv cat dog"
+    fi
+    echo
+
+    # Question 5
+    echo "How do you delete a file named 'old.txt'?"
+ 
+    echo -n "Your answer: "
+    read ans
+    if [[ "$ans" == "rm old.txt" ]]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Wrong! The correct answer is: rm old.txt"
+    fi
+    echo
+
+    echo "-------------------------------------------"
+    echo "Your total score: $score / 5"
+    echo "-------------------------------------------"
+
+    if [ $score -eq 5 ]; then
+        echo "Excellent! You’ve mastered file operations!"
+        
+        echo "Press Enter to Return to main menu..."
+        read
+        
+        main_menu
+    else
+        echo "You got some answers wrong. Want to try again?"
+        echo "Type 'retry' to retake the quiz or 'menu' to go back to the main menu."
+        read choice
+        if [ "$choice" = "retry" ]; then
+            quiz_file_operations
+        else
+            main_menu
+        fi
+    fi
+}
+
+
+quiz_basic_commands() {
+    clear
+    echo "========== BASIC COMMANDS QUIZ =========="
+    echo
+    score=0
+
+    # Question 1
+    echo "1. Which command is used to find the directory you are currently in?"
+   
+    echo -n "Your answer: "
+    read ans
+    if [[ "$ans" == "pwd" ]]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Wrong! The correct answer is 'pwd'."
+    fi
+    echo
+
+    # Question 2
+    echo "2. Which command is used to change the current directory?"
+   
+    echo -n "Your answer: "
+    read ans
+    if [[ "$ans" == "cd" ]]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Wrong! The correct answer is 'cd'."
+    fi
+    echo
+
+    # Question 3
+    echo "3. Which command lists files in the current directory?"
+    
+    echo -n "Your answer: "
+    read ans
+    if [[ "$ans" == "ls" ]]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Wrong! The correct answer is 'ls'."
+    fi
+    echo
+
+    echo "-------------------------------------------"
+    echo "Your total score: $score / 3"
+    echo "-------------------------------------------"
+
+    if [ $score -eq 3 ]; then
+        echo "Excellent! You’ve mastered the basics!"
+        
+        echo "Press Enter to return to main menu..."
+        read
+        main_menu
+        
+    else
+        echo "Keep practicing! Try reviewing the lesson again."
+        echo "Press ENTER to retry or type 'menu' to go back to main menu."
+        read choice
+        if [ "$choice" = "menu" ]; then
+            main_menu
+        else
+            quiz_basic_commands
+        fi
+    fi
+}
+
+# ---------- FUNCTION: MAIN MENU ----------
+main_menu() {
+    while true; do
+        clear
+        echo "========== MAIN MENU =========="
+        echo "1. Study Linux Commands"
+        echo "2. Learn Basic Linux Commands"
+        echo "3. Study File Operations"
+        echo "4. Learn File Operations"
+        echo "5. Learn Shell Scripting"
+        
+        echo "6. Exit"
+        echo "==============================="
+        echo -n "Choose an option [1-6]: "
+        read choice
+
+        case $choice in
+            1) teach_basic_commands ;;
+            2) learn_basic_commands ;;
+            3) teach_file_operations ;;
+            4) learn_file_ops ;;
+            5) learn_shell_scripting ;;
+            6) echo "Goodbye, $name 👋"; exit 0 ;;
+            *) echo "Invalid choice! Try again.";;
+        esac
+    done
+}
+
+# ---------- learn basic commands ----------
+learn_basic_commands() {
+    clear
+    echo "Basic Linux Commands"
+    echo "---------------------------------"
+    echo "Try the following commands:"
+    echo "1. pwd  -> Print working directory"
+    echo "2. ls   -> List files in directory"
+    echo "3. whoami -> Display current user"
+    echo
+    echo "Type any command to try it out (or type 'back' to return):"
+    while true; do
+        echo -n "> "
+        read cmd
+        if [ "$cmd" = "back" ]; then
+            return
+        elif [ "$cmd" = "q" ]; then
+            echo "Exiting program. Bye!"
+            exit 0
+        else
+            echo "Output:"
+            eval "$cmd"
+            echo
+        fi
+    done
+}
+
+# ---------- Learn file operation----------
+learn_file_ops() {
+    clear
+    echo "File Operations"
+    echo "----------------------------"
+    echo "You’ll learn: touch, mkdir, cp, mv, rm"
+    echo
+    echo "Press ENTER to continue..."
+    read
+    echo "#1: make a directory using mkdir -> create a directory named new_dir"
+    echo
+    echo "#2: touch test1.txt -> creates a file named test1.txt"
+    echo
+    echo "#3: touch another test2.txt -> creates a file named test2.txt"
+    echo
+    echo "#4: copy the text1.txt file into the directory which you have created"
+    echo
+    echo "#6: make another directory -> create a directory named another_dir"
+    echo
+     echo "#7: move the text2.txt file into the second directory which you have created"
+    echo
+    echo "#8: remove the text1.txt file"
+    echo
+    
+    echo "Try it yourself! Type a command or 'back' to return:"
+    while true; do
+        echo -n "> "
+        read cmd
+        if [ "$cmd" = "back" ]; then
+            return
+        else
+            eval "$cmd"
+        fi
+    done
+}
+
+# ---------- learn shell scripting----------
+learn_shell_scripting() {
+    clear
+    echo "========== SHELL SCRIPTING BASICS =========="
+    echo
+    echo "A shell script is a file with a .sh extension that contains commands"
+    echo "that the shell can execute line by line."
+    echo
+    echo "Example:"
+    echo '    #!/bin/bash'
+    echo '    echo "Hello World!"'
+    echo
+    echo "You can make it executable using:"
+    echo "    chmod +x filename.sh"
+    echo
+    echo "Then run it with:"
+    echo "    ./filename.sh"
+    echo
+    echo "-------------------------------------------"
+    echo "Press ENTER to return to the main menu..."
+    read
+}
+
+# ---------- MAIN PROGRAM ----------
+show_banner
+greet_user
+main_menu
+
