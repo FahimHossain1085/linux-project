@@ -64,7 +64,7 @@ It provides a guided environment to help new Linux users learn and practice esse
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/FahimHossain1085/linux-project.git
-   cd linux_learning_bot
+   cd linux-project
    ```
 
 2. **Give execute permission:**
