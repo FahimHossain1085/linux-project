@@ -378,6 +378,7 @@ learn_shell_scripting() {
     echo "-------------------------------------------"
     echo "Press ENTER to return to the main menu..."
     read
+    main_menu
 }
 
 # ---------- MAIN PROGRAM ----------
