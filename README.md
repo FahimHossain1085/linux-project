@@ -2,7 +2,7 @@
 
 **Author:** Md. Fahim Hossain  
 **ID:** 0432320005101085  
-**Batch:** 54 
+**Batch:** 54 <br>
 **Section:** 5B2
 ** **
 University of Information Technology and Sciences
@@ -97,43 +97,18 @@ It provides a guided environment to help new Linux users learn and practice esse
 
 ## 📝 Example Session
 
-```bash
-====================================
-   🐧 Welcome to Linux Learning Bot  
-====================================
+![Greetings Menu](<./Greetings menu.png>)
 
-Enter your name: Fahim
-Greetings, Fahim!
-Press Enter to start your Linux Journey
-```
+---
 
-Then, navigate the main menu:
-```
-========== MAIN MENU ==========
-1. Study Linux Commands
-2. Learn Basic Linux Commands
-3. Study File Operations
-4. Learn File Operations
-5. Learn Shell Scripting
-6. Exit
-===============================
-Choose an option [1-6]:
-```
+## Then, navigate the main menu:
+![Main Menu](<./Main menu.png>)
 
 ---
 
 ## 🧠 Quiz Example
 
-```
-========== BASIC COMMANDS QUIZ ==========
-1. Which command is used to find the directory you are currently in?
-Your answer: pwd
-✅ Correct!
--------------------------------------------
-Your total score: 3 / 3
--------------------------------------------
-Excellent! You’ve mastered the basics!
-```
+![quiz](<./Basic command quiz.png>)
 
 ---
 
