@@ -18,15 +18,24 @@ show_banner() {
 
 # Function to greet user
 greet_user() {
-    echo -n "Enter your name: "
-    read name
+    while true; do
+        echo -n "Enter your name: "
+        read name
+
+        if [[ -z "$name" ]]; then
+            echo "Name cannot be empty! Please enter your name."
+            echo
+        else
+            break
+        fi
+    done
+
     echo "Greetings, $name!"
-    
     echo "Press Enter to start your Linux Journey"
     read
     main_menu
-    
 }
+
 
 # ---------- FUNCTION: Teaching linux commands ----------
 teach_basic_commands() {
@@ -170,7 +179,7 @@ quiz_file_operations() {
     echo "1. How do you create a file called 'myfile'?"
     echo -n "Your answer: "
     read ans
-    if [[ $ans == "touch myfile" ]]; then
+    if [[ $ans == "touch myfile" || $ans == "cat > myfile" ]]; then
         echo "Correct!"
         ((score++))
     elif [[ $ans == 'menu' ]]; then
